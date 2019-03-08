@@ -1,0 +1,121 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Vaultname": {
+            "value": "DikshaVault"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "accessPolicies": {
+            "value": [
+                {
+                    "objectId": "4ae4d871-4b53-4195-8c3b-2250d5dd300b",
+                    "tenantId": "c160a942-c869-429f-8a96-f8c8296d57db",
+                    "permissions": {
+                        "keys": [],
+                        "secrets": [
+                            "Get",
+							"List",
+                            "Set"
+                        ],
+                        "certificates": []
+                    }
+                }
+            ]
+        },
+		
+		"secretsObject": {
+                "value": {
+					"secrets": [						
+						{
+							"secretName": "psreventHubName",												
+							"secretValue": "timeseries-eh-psr"
+						},
+						{
+							"secretName": "psrconsumerGrpName",
+							"secretValue": "cntnr-2.0.0"
+						},
+						{
+							"secretName": "psreventHubnamespace",												
+							"secretValue": "dataq-ts-eh-psr"
+						},
+						{
+							"secretName": "psrSASName",												
+							"secretValue": "ListenPolicy"
+						},
+						{
+							"secretName": "psrSASKey",												
+							"secretValue": ""
+						},
+						
+						
+						{
+							"secretName": "storageAccountName",												
+							"secretValue": "dataqtssa"
+						},
+						{
+							"secretName": "storageAccountKey",												
+							"secretValue": ""
+						},
+						{
+							"secretName": "storageContainerName",												
+							"secretValue": "dataqjava"
+						},
+						
+						{
+							"secretName": "rawSamplesEventHubName",												
+							"secretValue": "timeseries-eh-rawsample"
+						},
+						{
+							"secretName": "rawSamplesEventHubnamespace",												
+							"secretValue": "dataq-ts-eh-rawsample"
+						},
+						{
+							"secretName": "rawSamplesSASName",												
+							"secretValue": "SendPolicy"
+						},
+						{
+							"secretName": "rawSamplesSASKey",												
+							"secretValue": ""
+						},
+						
+						
+						{
+							"secretName": "psrStatusEventHubName",												
+							"secretValue": "timeseries-eh-psrstatus"
+						},
+						{
+							"secretName": "psrStatusEventHubnamespace",												
+							"secretValue": "dataq-ts-eh-status"
+						},
+						{
+							"secretName": "psrStatusSASName",												
+							"secretValue": "SendPolicy"
+						},
+						{
+							"secretName": "psrStatusSASKey",												
+							"secretValue": ""
+						}			
+						
+						
+						
+					]
+				}
+        },
+		
+		
+        "tenant": {
+            "value": "c160a942-c869-429f-8a96-f8c8296d57db"
+        },        
+        "networkAcls": {
+            "value": {
+                "defaultAction": "Allow",
+                "bypass": "AzureServices",
+                "virtualNetworkRules": [],
+                "ipRules": []
+            }
+        }
+    }
+}
